@@ -1,0 +1,819 @@
+/*
+* @package      Style
+* @description  This package holds all common style declarations
+*               of the site
+*/
+
+@import "_variables.scss";
+@import "includes/_mixins.scss";
+
+@import "includes/_normalize.scss";
+@import "modules/tm-grid/_tm-grid.scss";
+
+/*
+* @section      Icon Fonts
+* @description  This section holds all icon fonts stored in template
+*/
+
+@import "fonts/_font-awesome.scss";
+@import "fonts/_material-icons.scss";
+
+/*
+* @section      Main Styles
+* @description  This section holds template default elements style declarations
+*/
+
+html {
+  font-size: 70px;
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+    font-size: 80px;
+  }
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-lg-min - 1) {
+    font-size: 90px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 100px;
+  }
+}
+
+body {
+  font-family: $default-font-family;
+  font-weight: $default-font-weight;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: none;
+  color: $content-color;
+  background: $content-bg;
+  overflow-y: scroll;
+  padding-bottom: 60px;
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+  }
+}
+
+
+/*
+* @subsection   Typography
+* @description  Describes default font settings for basic html elements and
+*               css classes
+*/
+
+h1, h2, h3, h4, h5, h6,
+.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+  display: block;
+
+  a {
+    color: $primary;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, .heading-1 {
+  font-size: 40px;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+  color: $white;
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+  }
+  img,span{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 55px;
+    line-height: 1.16;
+  }
+}
+
+h2, .heading-2 {
+  font-size: 36px;
+  line-height: 1.5;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 56px;
+  }
+}
+
+h3, .heading-3 {
+  font-size: 32px;
+  line-height: 1.5;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 45px;
+  }
+}
+
+h4, .heading-4 {
+  font-size: 26px;
+  line-height: 1.47;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 34px;
+  }
+}
+
+h5, .heading-5 {
+  font-size: 22px;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 24px;
+  }
+}
+
+h6, .heading-6 {
+  font-size: 18px;
+  color: $primary;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 20px;
+  }
+}
+
+.list, .marked-list, .index-list {
+  font-weight: 300;
+}
+
+p, .list, .contact-info {
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+mark {
+  color: #FFF;
+  background: $primary;
+}
+
+em {
+  color: $primary;
+}
+
+small, .small {
+  font-size: .8em;
+}
+
+.big {
+  font-size: 1.2em;
+}
+
+time {
+}
+
+
+/*
+* @section      Main Layout
+* @description  This section holds class declarations for elements indent creation
+*/
+
+/*
+* @subsection   Offsets
+* @description  Describes vertical indentation between the elements
+*/
+
+* + h1 {
+}
+
+* + h2 {
+}
+
+* + h3 {
+}
+
+* + h4, * + .heading-4 {
+  margin-top: 24px;
+}
+
+* + h5 {
+  margin-top: 24px;
+}
+
+* + h6 {
+}
+
+* + img {
+
+}
+
+* + .btn,
+* + .btn-group {
+
+}
+
+* + .link {
+
+}
+
+* + .index-list {
+
+}
+
+* + .marked-list {
+
+}
+
+* + .ordered-list {
+}
+
+* + .inline-list {
+}
+
+* + .contact-info {
+
+}
+
+* + .box,
+* + .box-xs,
+* + .box-sm,
+* + .box-md,
+* + .box-lg {
+
+}
+
+* + .responsive-tabs,
+* + .row,
+* + .terms-list {
+
+}
+
+.row + .row{
+  margin-top: 10px;
+}
+
+* + .container {
+
+}
+
+h6+p{
+  margin-top: 10px;
+}
+
+* + .offset {
+  &-1 {
+    margin-top: 30px;
+  }
+
+  &-2 {
+  }
+
+  &-3 {
+  }
+}
+
+p + p{
+
+}
+
+.box, .box-xs, .box-sm, .box-md, .box-lg {
+  & + .box,
+  & + .box-xs,
+  & + .box-sm,
+  & + .box-md,
+  & + .box-lg {
+
+  }
+}
+
+.flow-offset-1 {
+  @include make-flow-offset(30px);
+}
+
+
+/*
+* @subsection   Postfix
+* @description  Describes instant right margin classes
+*/
+
+.postfix-1 {
+
+}
+
+
+/*
+* @subsection   Prefix
+* @description  Describes instant right margin classes
+*/
+
+.preffix-1 {
+
+}
+
+
+/*
+* @subsection   Insets
+* @description  Describes instant padding classes
+*/
+
+.inset {
+  &-1 {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  &-2 {
+
+  }
+
+  &-3 {
+  }
+}
+
+
+/*
+* @subsection   Well
+* @description  Describes section inner indents
+*/
+
+.well-xs {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.well-sm {
+  padding-top: rem(100px);
+  padding-bottom: rem(100px);
+}
+
+.well-md {
+  padding-top: rem(150px);
+  padding-bottom: rem(150px);
+}
+
+.well-lg {
+  padding-top: rem(200px);
+  padding-bottom: rem(200px);
+}
+
+.well-xl {
+  padding-top: rem(250px);
+  padding-bottom: rem(250px);
+}
+
+/*
+* @section      Helpers
+* @description  This section holds various helper classes for
+*               conditional page styling
+*/
+
+.round {
+  border-radius: 50%;
+}
+
+/*
+* @subsection   Colors
+*/
+
+html body .page { // Increases specificity to use with background helpers
+  .default-color {
+    color: $contrast;
+  }
+
+  .primary-color {
+    color: $primary;
+  }
+  margin: 0 auto;
+  @media (min-width: 1000px){
+    max-width: 1000px;
+  }
+}
+
+
+/*
+* @subsection   Backgrounds
+*/
+
+.bg-primary {
+  background: $primary;
+
+  &, #{headings()} {
+    color: $contrast;
+  }
+}
+
+.bg-light {
+  background: $contrast;
+}
+
+@import "helpers/_floating.scss";
+@import "helpers/_text-alignment.scss";
+@import "helpers/_text-styling.scss";
+@import "helpers/_animate.scss";
+
+
+/*
+* @section      Components
+* @description  This section holds all elements style declarations of template
+*/
+
+//*
+// @subsection   Box
+//*
+@import "modules/tm-box/_boxes.scss";
+
+.box {
+
+}
+
+/*
+* @subsection   Brand
+*/
+
+.brand{
+  max-height: 50px;
+}
+
+/*
+* @subsection   Inline List
+*/
+
+.inline-list {
+  margin-left: -10px;
+
+  > li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+
+/*
+* @subsection   Marked List
+*/
+
+.marked-list {
+  text-align: left;
+
+  > li {
+    position: relative;
+    padding-left: 30px;
+
+    &:before {
+      content: "\f105";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 400;
+      font-size: 1em;
+      font-family: $fa;
+      color: $primary;
+    }
+
+    & + li {
+      margin-top: 10px;
+    }
+
+    > a:hover {
+      color: $primary;
+    }
+  }
+}
+
+
+/*
+* @subsection   Index List
+*/
+
+.index-list {
+  counter-reset: li;
+
+  > li {
+    > .index-list__counter{
+      &:before {
+        content: counter(li, decimal-leading-zero) '.';
+        counter-increment: li;
+      }
+    }
+  }
+
+  // Sets offset between list rows
+  @include make-flow-offset(22px);
+}
+
+
+/*
+* @subsection   Ordered List
+*/
+
+.ordered-list {
+  > li {
+    padding-left: 20px;
+    list-style-type: decimal;
+  }
+}
+
+
+/*
+* @subsection   Terms  List
+*/
+
+.terms-list {
+  > dt + dd {
+    margin-top: 10px;
+  }
+
+  > dt + dd {
+    margin-top: 10px;
+  }
+}
+
+
+/*
+* @subsection   Contact Info
+*/
+
+.contact-info {
+  p {
+  }
+
+  dl {
+    dt, dd {
+      display: inline-block;
+    }
+
+    dt:after {
+      content: ':';
+    }
+
+    dt {
+      min-width: 80px;
+    }
+  }
+}
+
+
+/*
+* @subsection   Thumb
+*/
+
+.thumb {
+
+}
+
+/*
+* @subsection   Link
+*/
+
+.link {
+  display: inline-block;
+}
+
+p{
+  a{
+    color: $secondary-1;
+  }
+}
+
+
+/*
+* @subsection   Video
+*/
+
+.video {
+  position: relative;
+  padding-bottom: percentage(340 / 570); // percentage( Height / Width ) on PSD
+
+  > iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/*
+* @subsection   Post
+*/
+
+.post{
+  background: $white;
+  box-shadow: $box-shadow-key-light;
+  border-radius: 2px;
+  padding: 25px 10px 15px;
+  position: relative;
+  @media (min-width: $screen-xs-min) {
+    padding: 25px 15px 15px 30px;
+  }
+  .meta{
+    @include clearfix;
+    +p{
+      margin-top: 15px;
+    }
+  }
+  &_profile{
+    float: left;
+    margin-top: -15px;
+    &:before{
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+    &-img{
+      display: inline-block;
+      vertical-align: middle;
+      width: 60px;
+      border-radius: 50%;
+    }
+    &-name{
+      vertical-align: middle;
+      font-weight: 700;
+      color: #4C4C4C;
+      margin-left: 15px;
+      display: none;
+      @media (min-width: $screen-xs-min) {
+        display: inline-block;
+      }
+    }
+  }
+  &_message{
+//    color: darken($default, 30%);
+  }
+  &_attachment{
+    padding-left: 20px;
+    margin: 30px 0;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      bottom: 10px;
+      border-left: 2px solid #e8e8e8;
+    }
+
+    &:before{
+      content: '';
+      display: inline-block;
+      height: 100%;
+      line-height: inherit;
+    }
+    &-wrap{
+
+      vertical-align: middle;
+      @media (min-width: $screen-xs-min) {
+        display: inline-block;
+        max-width: 60%;
+      }
+
+      h6{
+        font-weight: 700;
+        color: $primary;
+      }
+    }
+    img {
+      margin: 0 0 20px 0;
+      display: inline-block;
+      vertical-align: middle;
+      box-shadow: $box-shadow-ambient;
+      @media (min-width: $screen-xs-min) {
+        margin: 0 20px 0 0;
+      }
+    }
+  }
+  time{
+    float: right;
+    font-weight: 300;
+    color: #E8E8E8;
+    font-size: 14px;
+  }
+
+  &_comments{
+    margin-top: 15px;
+    h6+*{
+      margin-top: 20px;
+    }
+  }
+
+  &_comment{
+    box-shadow: 2px 2px 5px rgba(#000, .25);
+    padding: 10px 15px;
+    +.post_comment{
+      margin-top: 10px;
+    }
+    a{
+      font-weight: 700;
+      display: inline-block;
+      color: $primary;
+      &:hover{
+        color: $secondary-1;
+      }
+    }
+    p{
+      color: darken($default, 30%);
+    }
+  }
+
+  &_icons{
+    margin-top: 30px;
+    span{
+      color: #111;
+      font-size: 16px;
+      &:before{
+        color: $primary;
+        font-size: 22px;
+        margin-right: 5px;
+      }
+      +span{
+        margin-left: 20px;
+      }
+    }
+    a{
+      float: right;
+      color: $secondary-1;
+      font-size: 13px;
+      display: inline-block;
+      &:hover{
+        color: $primary;
+      }
+    }
+  }
+
+}
+
+.post + .post{
+  margin-top: 30px;
+}
+
+
+//*
+//Imports
+//*
+
+@import "components/_buttons.scss";
+@import "components/_icons.scss";
+
+
+/*
+* @section      Extensions
+* @description  This section holds some of style declarations for necessary
+*               scripts
+*/
+
+@import "extensions/_rd-parallax.scss";
+@import "extensions/_swiper.scss";
+@import "extensions/_vide.scss";
+@import "extensions/_ui-to-top.scss";
+@import "extensions/_rd-navbar.scss";
+@import "extensions/_magnific-popup.scss";
+
+
+
+/*
+* @section      Page Header
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page header
+*/
+
+.page-header {
+  padding: 30px 0;
+  z-index: 10;
+
+}
+
+
+/*
+* @section      Page Content
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page content
+*/
+
+.page-content {
+  .desktop & {
+//    min-height: 200vh;
+  }
+}
+
+/*
+* @section      Page Footer
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page footer
+*/
+
+.page-footer {
+  background: $footer-bg;
+
+  &, #{headings()} {
+    color: $footer-color;
+  }
+}
+
+
+.copyright {
+}

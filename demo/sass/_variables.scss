@@ -1,0 +1,56 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+// Use relative measurements. Change to 0 on "Post Production"
+$debug: 1;
+
+// Layouts
+$layout-boxed-width: 1920px;
+$layout-boxed-bg: #444;
+
+
+// Resolutions
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xlg-min: 1800px;
+
+
+// Fonts
+$default-font-family: 'Roboto', sans-serif;
+$default-font-weight: 400;
+$default-font-size: 16px;
+$default-line-height: 24px;
+
+
+// Colors
+$default: #a5a5a5;
+$contrast: #fff;
+$white: #fff;
+$primary: #48649F;
+$secondary-1: #1A49B9;
+$secondary-2: #ff4c2e;
+$secondary-3: #feea3a;
+
+$header-color: $default;
+$header-bg: $contrast;
+
+$content-color: $default;
+$content-bg: $primary;
+
+$footer-color: $contrast;
+$footer-bg: $default;
+
+
+// Round Corvers
+$border-radius-small: 0;
+$border-radius-base: $border-radius-small * 2;
+$border-radius-large: $border-radius-base * 2;
+
+
+// Shadows
+$box-shadow-ambient: 1px 1px 4px rgba(0, 0, 0, .3);
+$box-shadow-key-light: 2px 3px 10px 0px rgba(0, 0, 0, 0.4);
+
